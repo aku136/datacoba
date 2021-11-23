@@ -1,0 +1,24 @@
+{
+  "name": "datacoba",
+  "version": "1.0.0",
+  "description": "data restapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aku136/datacoba.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "nodejs"
+  ],
+  "author": "fanny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aku136/datacoba/issues"
+  },
+  "homepage": "https://github.com/aku136/datacoba#readme"
+}
