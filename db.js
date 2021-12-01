@@ -3,6 +3,9 @@ const dbConfig = require("koneksi.js");
 
 // Create a connection to the database
 const connection = mysql.createConnection({
+
+  port: dbConfig.port,
+  connection: dbConfig.connect,
   host: dbConfig.host,
   user: dbConfig.user,
   password: dbConfig.password,
