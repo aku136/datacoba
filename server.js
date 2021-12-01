@@ -29,9 +29,9 @@ app.use(bodyParser.json());
 //     console.log(`Server started on port`);
 // });
 // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to application." });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Welcome to application." });
+// });
 
 require("./routes.js")(app);
 

@@ -3,7 +3,7 @@
 module.exports = function (app) {
   var jsonku = require("./controller");
 
-  app.route("/").get(jsonku.index);
+  // app.route("/").get(jsonku.index);
   // add this below app.use("/", routes) to make index.html a static file
   app.route('/').get(function (req, res) {
   res.sendFile(process.cwd() + '/index.html');});
