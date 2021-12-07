@@ -22,7 +22,7 @@ exports.tampilsemuadata = function (req, res) {
 exports.tampilberdasarid = function (req, res) {
   let id = req.params.id;
   connection.query(
-    "SELECT * FROM data WHERE ID = ?",
+    "SELECT * FROM data WHERE id = ?",
     [id],
     function (error, rows, fields) {
       if (error) {
@@ -36,14 +36,15 @@ exports.tampilberdasarid = function (req, res) {
 
 //tambah data ina219
 exports.tambahdata = function (req, res) {
+  var currentac = req.body.currentac;
+  var voltageac = req.body.voltageac;
   var currentdc = req.body.currentdc;
   var voltagedc = req.body.voltagedc;
-
-  // var time = req.body.time;
+  
 
   connection.query(
-    "INSERT INTO data (currentdc,voltagedc) VALUES (?,?)",
-    [currentdc, voltagedc],
+    "INSERT INTO data (currentac,voltageac,currentdc,voltagedc) VALUES (?,?,?,?)",
+    [currentac, voltageac, currentdc, voltagedc],
     function (error, rows, fields) {
       if (error) {
         console.log(error);
@@ -56,13 +57,15 @@ exports.tambahdata = function (req, res) {
 
 // megubah data berdasarkan idnya
 exports.ubahdata = function (req, res) {
-  var ID = req.body.ID;
+  var id = req.body.id;
+  var currentac = req.body.currentac;
+  var voltageac = req.body.voltageac;
   var currentdc = req.body.currentdc;
   var voltagedc = req.body.voltagedc;
 
   connection.query(
-    "UPDATE data SET currentdc=?, voltagedc=? WHERE ID=?",
-    [currentdc, voltagedc, ID],
+    "UPDATE data SET currentac=?, voltageac=?, currentdc=?, voltagedc=? WHERE id=?",
+    [currentac, voltageac, currentdc, voltagedc, id],
     function (error, rows, fields) {
       if (error) {
         console.log(error);
@@ -75,11 +78,11 @@ exports.ubahdata = function (req, res) {
 
 //menghapus data berdasarkan id
 exports.hapusdata = function (req, res) {
-  var ID = req.body.ID;
+  var id = req.body.id;
 
   connection.query(
-    "DELETE FROM data WHERE ID=?",
-    [ID],
+    "DELETE FROM data WHERE id=?",
+    [id],
     function (error, rows, fields) {
       if (error) {
         console.log(error);
