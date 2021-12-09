@@ -6,7 +6,7 @@ module.exports = function (app) {
   // app.route("/").get(jsonku.index);
   // add this below app.use("/", routes) to make index.html a static file
   app.route('/').get(function (req, res) {
-  res.sendFile(process.cwd() + '/index.html');});
+  res.sendFile(process.cwd() + '/realtime.php');});
 
   app.route("/tampil").get(jsonku.tampilsemuadata);
 
