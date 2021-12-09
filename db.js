@@ -1,7 +1,7 @@
 const mysql = require("mysql");
 const dbConfig = require("koneksi.js");
 
-// Create a connection to the database
+// Buat koneksi ke database
 const connection = mysql.createConnection({
 
   port: dbConfig.port,
@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
   database: dbConfig.database,
 });
 
-// open the MySQL connection
+// buka koneksi MySQL
 connection.connect((error) => {
   if (error) throw error;
   console.log("Successfully connected to the database.");
