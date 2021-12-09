@@ -9,7 +9,7 @@ exports.index = function (req, res) {
 
 //menampilkan semua data ina219
 exports.tampilsemuadata = function (req, res) {
-  connection.query("SELECT * FROM data order by id desc", function (error, rows, fields) {
+  connection.query("SELECT * FROM data ", function (error, rows, fields) {
     
     if (error) {
       connection.log(error);
@@ -19,16 +19,6 @@ exports.tampilsemuadata = function (req, res) {
 
   });
 };
-
-// setInterval.tampilsemuadata = function(req, res){
-//   connection.query("SELECT * FROM data order by id desc", function (error, rows, fields){
-//     if (error) {
-//       console.log(error);
-//     }else{
-//       response.ok(rows, res);
-//     }
-//   },1000);
-// };
 
 //menampilkan data ina219 berdasarkan id
 exports.tampilberdasarid = function (req, res) {

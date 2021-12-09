@@ -9,6 +9,7 @@ module.exports = function (app) {
   res.sendFile(process.cwd() + '/index.html');});
 
   app.route("/tampil").get(jsonku.tampilsemuadata);
+  app.route("/raeltime").get("./realtime");
 
   app.route("/tampil/:id").get(jsonku.tampilberdasarid);
 
