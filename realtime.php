@@ -15,8 +15,10 @@
         $(document).ready( function(){
 
             setInterval( function(){
-                 $("#cekcurrent").load("cekcurrent.php");
-                 $("#cekvoltage").load("cekvoltage.php");
+                 $("#cekcurrentac").load("cekcurrentac.php");
+                 $("#cekvoltageac").load("cekvoltageac.php");
+                 $("#cekcurrentdc").load("cekcurrentdc.php");
+                 $("#cekvoltagedc").load("cekvoltagedc.php");
                  $("#cektime").load("cektime.php");
             },1000 );
 
@@ -33,10 +35,10 @@
         <!-- menampilkan current -->
         <div class="card text-center">
             <div class="card-header" style="font-size: 30px; font-weight: bold; background-color: yellow">
-                Current
+                Current ac
             </div>
             <div class="card-body">
-               <h1><span id="cekcurrent"> 0 </span></h1>
+               <h1><span id="cekcurrentac"> 0 </span></h1>
             </div>
         </div>
     <div/>
@@ -44,14 +46,35 @@
          <!-- menampilkan voltage -->
         <div class="card text-center">
             <div class="card-header" style="font-size: 30px; font-weight: bold; background-color: yellow">
-                Voltage
+                Voltage ac
             </div>
             <div class="card-body">
-            <h1><span id="cekvoltage"> 0 </span></h1>
+            <h1><span id="cekvoltageac"> 0 </span></h1>
             </div>
         </div>
     <div/>
 
+        <!-- menampilkan current -->
+        <div class="card text-center">
+            <div class="card-header" style="font-size: 30px; font-weight: bold; background-color: yellow">
+                Current dc
+            </div>
+            <div class="card-body">
+               <h1><span id="cekcurrentdc"> 0 </span></h1>
+            </div>
+        </div>
+    <div/>
+
+         <!-- menampilkan voltage -->
+        <div class="card text-center">
+            <div class="card-header" style="font-size: 30px; font-weight: bold; background-color: yellow">
+                Voltage dc
+            </div>
+            <div class="card-body">
+            <h1><span id="cekvoltagedc"> 0 </span></h1>
+            </div>
+        </div>
+    <div/>
         <!-- menampilkan time -->
          <div class="card text-center">
             <div class="card-header" style="font-size: 30px; font-weight: bold; background-color: yellow">

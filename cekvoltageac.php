@@ -8,9 +8,9 @@ $sql = mysqli_query($konek, "select * from data order by id desc");
 //ambil data
 $data = mysqli_fetch_array($sql);
 
-$current = $data["currentdc"];
+$voltagedc = $data["voltagedc"];
 
 //uji
-echo $current;
+echo $voltagedc;
 
 ?>
