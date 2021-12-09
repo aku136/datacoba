@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Realtime Data</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Kelompok 2 Magang Gmedia Seamarang</h1>
     <h2 id="currentdc">0</h2>
 
     <script type="text/javascript">
-        const currentdc = document.getElementById("currentdc");
-        setInterval(function(req, res){
-            connection.query("SELECT * FROM data  order by id desc ", function (error, rows, fields){
-
-            },1000);
-        });
+      const currentdc = document.getElementById("currentdc");
+      setInterval(function (req, res) {
+        connection.query(
+          "SELECT * FROM data  order by id desc ",
+          function (error, rows, fields) {
+            if (error) {
+              connection.log(error);
+            } else {
+              response.ok(rows, res);
+            }
+          },1000);
+      });
     </script>
-</body>
+  </body>
 </html>
