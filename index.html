@@ -17,14 +17,14 @@
     />
     <title>REALTIME</title>
 
-    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="realtime/jquery/jquery.min.js"></script>
     <!-- load otomatis -->
     <script type="text/javascript">
       $(document).ready(function () {
         setInterval(function () {
-          $("#cekcurrent").load("cekcurrent.php");
-          $("#cekvoltage").load("cekvoltage.php");
-          $("#cektime").load("cektime.php");
+          $("#cekcurrent").load("realtime/cekcurrent.php");
+          $("#cekvoltage").load("realtime/cekvoltage.php");
+          $("#cektime").load("realtime/cektime.php");
         }, 1000);
       });
     </script>
