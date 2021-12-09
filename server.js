@@ -5,6 +5,15 @@ const bodyParser = require("body-parser");
 const app = express();
 const helmet = require('helmet');
 const compression = require('compression');
+// var mqttHandler = require('./mqtt_handler');
+
+// var mqttClient = new mqttHandler();
+// mqttClient.connect();
+
+// app.post("/send-mqtt", function(req, res) {
+//   mqttClient.sendMessage(req.body.message);
+//   res.status(200).send("Message sent to mqtt");
+// });
 
 var corsOptions = {
   origin: "http://localhost:3000",
