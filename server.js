@@ -45,7 +45,7 @@ app.use(bodyParser.json());
 require("./routes.js")(app);
 
 app.route("/").get(function (req, res) {
-  res.sendFile(process.cwd() + "realtime.index.html");
+  res.sendFile(process.cwd() + "/index.html");
 });
 
 // set port, listen for requests
