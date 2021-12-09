@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>REALTIME</title>
 
-    <script type="text/javascript" src="jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="./jquery.min.js"></script>
 <!-- load otomatis -->
     <script type="text/javascript">
         $(document).ready( function(){
