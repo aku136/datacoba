@@ -7,7 +7,7 @@
     <title>Realtime Data</title>
   </head>
   <body>
-    <h1>Kelompok 2 Magang Gmedia Seamarang</h1>
+    <h1>Kelompok 2 Magang Gmedia Semarang</h1>
     <h2 id="currentdc">0</h2>
 
     <script type="text/javascript">
@@ -17,9 +17,9 @@
           "SELECT * FROM data  order by id desc ",
           function (error, rows, fields) {
             if (error) {
-              connection.log(error);
+              console.log(error);
             } else {
-              response.ok(rows, res);
+              response.ok(currentdc, rows, res);
             }
           },1000);
       });
