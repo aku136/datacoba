@@ -17,10 +17,6 @@ exports.tampilsemuadata = function (req, res) {
       response.ok(rows, res);
     }
 
-  //   setInterval(function () {
-  //     connection.query('SELECT * FROM data order by id desc');
-  // }, 1000);
-
   });
 };
 
