@@ -1,8 +1,5 @@
 "use strict";
 
-<script type="text/javascript" src="./jquery.min.js"></script>
-
-
 var response = require("./res");
 var connection = require("./koneksi");
 
@@ -11,27 +8,27 @@ exports.index = function (req, res) {
 };
 
 //menampilkan semua data ina219
-// exports.tampilsemuadata = function (req, res) {
-//   connection.query("SELECT * FROM data", function (error, rows, fields) {
+exports.tampilsemuadata = function (req, res) {
+  connection.query("SELECT * FROM data", function (error, rows, fields) {
     
-//     if (error) {
-//       connection.log(error);
-//     } else {
-//       response.ok(rows, res);
-//     }
-
-//   });
-// };
-
-setInterval.tampilsemuadata(function(req, res){
-  connection.query("SELECT * FROM data order by id desc", function (error, rows, fields){
     if (error) {
-      console.log(error);
-    }else{
+      connection.log(error);
+    } else {
       response.ok(rows, res);
     }
-  },1000);
-});
+
+  });
+};
+
+// setInterval.tampilsemuadata(function(req, res){
+//   connection.query("SELECT * FROM data order by id desc", function (error, rows, fields){
+//     if (error) {
+//       console.log(error);
+//     }else{
+//       response.ok(rows, res);
+//     }
+//   },1000);
+// });
 
 //menampilkan data ina219 berdasarkan id
 exports.tampilberdasarid = function (req, res) {
