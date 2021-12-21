@@ -20,6 +20,18 @@ exports.tampilsemuadata = function (req, res) {
   });
 };
 
+exports.dataterbaru = function (req, res) {
+  connection.query("SELECT * FROM data order by id desc limit 1 ", function (error, rows, fields) {
+    
+    if (error) {
+      connection.log(error);
+    } else {
+      response.ok(rows, res);
+    }
+
+  });
+};
+
 //menampilkan data ina219 berdasarkan id
 exports.tampilberdasarid = function (req, res) {
   let id = req.params.id;
