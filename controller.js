@@ -7,7 +7,7 @@ exports.index = function (req, res) {
   response.ok("rest api berjalan", res);
 };
 
-//menampilkan semua data ina219
+//menampilkan semua data 
 exports.tampilsemuadata = function (req, res) {
   connection.query("SELECT * FROM data ", function (error, rows, fields) {
     
@@ -20,6 +20,20 @@ exports.tampilsemuadata = function (req, res) {
   });
 };
 
+//tampil semua data dari yang terbaru
+exports.tampilsemuadata1 = function (req, res) {
+  connection.query("SELECT * FROM data order by id desc ", function (error, rows, fields) {
+    
+    if (error) {
+      connection.log(error);
+    } else {
+      response.ok(rows, res);
+    }
+
+  });
+};
+
+//menampilkan data terakhir
 exports.dataterbaru = function (req, res) {
   connection.query("SELECT * FROM data order by id desc limit 1 ", function (error, rows, fields) {
     
