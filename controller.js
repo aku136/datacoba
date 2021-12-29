@@ -20,6 +20,19 @@ exports.tampilsemuadata = function (req, res) {
   });
 };
 
+//menampilkan data users 
+exports.tampilusers = function (req, res) {
+  connection.query("SELECT * FROM users ", function (error, rows, fields) {
+    
+    if (error) {
+      connection.log(error);
+    } else {
+      response.ok(rows, res);
+    }
+
+  });
+};
+
 //tampil semua data dari yang terbaru
 exports.tampilsemuadata1 = function (req, res) {
   connection.query("SELECT * FROM data order by id desc ", function (error, rows, fields) {
