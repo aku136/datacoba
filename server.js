@@ -5,12 +5,9 @@ const app = express();
 const helmet = require('helmet');
 const compression = require('compression');
 
-var corsOptions = {
-  origin: "http://localhost:3000",
-};
 
 app.use(compression()); 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(helmet());
 
 // parse requests of content-type - application/json
