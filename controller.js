@@ -9,7 +9,7 @@ exports.index = function (req, res) {
 
 //menampilkan semua data 
 exports.tampilsemuadata = function (req, res) {
-  connection.query("SELECT * FROM data ", function (error, rows, fields) {
+  connection.query("SELECT * FROM data", function (error, rows, fields) {
     
     if (error) {
       connection.log(error);
