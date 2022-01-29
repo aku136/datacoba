@@ -33,19 +33,6 @@ exports.tampilusers = function (req, res) {
   });
 };
 
-//menampilkan data contoh 
-exports.tampilcontoh = function (req, res) {
-  connection.query("SELECT * FROM contoh ", function (error, rows, fields) {
-    
-    if (error) {
-      connection.log(error);
-    } else {
-      response.ok(rows, res);
-    }
-
-  });
-};
-
 //tampil semua data dari yang terbaru
 exports.tampilsemuadata1 = function (req, res) {
   connection.query("SELECT * FROM data order by id desc ", function (error, rows, fields) {
@@ -97,7 +84,7 @@ exports.tambahdata = function (req, res) {
   
 
   connection.query(
-    "INSERT INTO data (currentac,voltageac,currentdc,voltagedc) VALUES (?,?,?,?)",
+    "SELECT INTO data (currentac,voltageac,currentdc,voltagedc) VALUES (?,?,?,?)",
     [currentac, voltageac, currentdc, voltagedc],
     function (error, rows, fields) {
       if (error) {
