@@ -12,8 +12,6 @@ module.exports = function (app) {
 
   app.route("/users").get(jsonku.tampilusers);
 
-  app.route("/contoh").get(jsonku.tampilcontoh);
-
   app.route("/tampilbaru").get(jsonku.dataterbaru);
 
   app.route("/tampil/:id").get(jsonku.tampilberdasarid);
