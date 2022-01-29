@@ -68,6 +68,36 @@ exports.tambahuser = function (req, res) {
   );
 };
 
+//login user
+exports.loginuser = function (req, res) {
+  var email = req.body.email;
+  var password = req.body.password;
+
+  connection.query(
+    "SELECT * FROM users WHERE email = ? AND password = ?",
+    [email, password],
+    function (error, rows, fields) {
+      if(rows.length<1){
+        const result = {
+              status:false,
+              message: "username dan password masih salah",
+              data: null,
+              error:error
+        }
+        res.status(400).json(result);
+      }else{
+        const result = {
+          status:true,
+          message: "selamat datang",
+          data: rows,
+          error:null
+        }
+        res.status(200).json(result);
+      }
+    }
+  );
+};
+
 //tampil semua data dari yang terbaru
 exports.tampilsemuadata1 = function (req, res) {
   connection.query("SELECT * FROM data order by id desc ", function (error, rows, fields) {
