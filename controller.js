@@ -33,6 +33,41 @@ exports.tampilusers = function (req, res) {
   });
 };
 
+// tambah data user
+exports.tambahuser = function (req, res) {
+  var nama = req.body.nama;
+  var email = req.body.email;
+  var password = req.body.password;
+
+  connection.query(
+    "INSERT INTO users (nama,email,password) VALUES (?,?,?)",
+    [nama, email, password],
+    function (error, rows, fields) {
+      if (error) {
+        const result = {
+          status:false,
+          message: "gagal tambah users",
+          data: null,
+          error:error
+        }
+        res.status(400).json(result);
+      } else {
+        const result = {
+          status:true,
+          message: "berhasil tambah users",
+          data: {
+            nama,
+            email,
+            password
+          },
+          error:null
+        }
+        res.status(200).json(result);
+      }
+    }
+  );
+};
+
 //tampil semua data dari yang terbaru
 exports.tampilsemuadata1 = function (req, res) {
   connection.query("SELECT * FROM data order by id desc ", function (error, rows, fields) {
