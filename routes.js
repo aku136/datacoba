@@ -11,6 +11,7 @@ module.exports = function (app) {
   app.route("/tampil1").get(jsonku.tampilsemuadata1);
 
   app.route("/users").get(jsonku.tampilusers);
+  app.route("/users/login").post(jsonku.loginuser);
   app.route("/users/register").post(jsonku.tambahuser);
 
   app.route("/tampilbaru").get(jsonku.dataterbaru);
