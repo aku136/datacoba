@@ -144,13 +144,15 @@ exports.tampilberdasarid = function (req, res) {
 exports.tambahdata = function (req, res) {
   var currentac = req.body.currentac;
   var voltageac = req.body.voltageac;
+  var dayaac = req.body.dayaac;
   var currentdc = req.body.currentdc;
   var voltagedc = req.body.voltagedc;
+  var dayadc = req.body.dayadc;
   
 
   connection.query(
-    "SELECT INTO data (currentac,voltageac,currentdc,voltagedc) VALUES (?,?,?,?)",
-    [currentac, voltageac, currentdc, voltagedc],
+    "SELECT INTO data (currentac,voltageac,dayaac,currentdc,voltagedc,dayadc) VALUES (?,?,?,?,?,?)",
+    [currentac, voltageac, dayaac, currentdc, voltagedc, dayadc],
     function (error, rows, fields) {
       if (error) {
         console.log(error);
@@ -166,12 +168,14 @@ exports.ubahdata = function (req, res) {
   var id = req.body.id;
   var currentac = req.body.currentac;
   var voltageac = req.body.voltageac;
+  var dayaac = req.body.dayaac;
   var currentdc = req.body.currentdc;
   var voltagedc = req.body.voltagedc;
+  var dayadc = req.body.dayadc;
 
   connection.query(
-    "UPDATE data SET currentac=?, voltageac=?, currentdc=?, voltagedc=? WHERE id=?",
-    [currentac, voltageac, currentdc, voltagedc, id],
+    "UPDATE data SET currentac=?, voltageac=?,  dayaac=?, currentdc=?, voltagedc=?, dayadc=? WHERE id=?",
+    [currentac, voltageac, dayaac, currentdc, voltagedc, dayadc, id],
     function (error, rows, fields) {
       if (error) {
         console.log(error);
